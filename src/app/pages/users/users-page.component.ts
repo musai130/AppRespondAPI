@@ -20,6 +20,7 @@ export class UsersPageComponent implements OnInit  {
   url_user = 'https://reqres.in/api/users/'
   userslist: IUsers = users_data
   flag = true
+  loading = false
   userform!: IUsersData
   onChanged(data: ChangeData) {
     this.flag = !data.increased;
@@ -33,6 +34,7 @@ export class UsersPageComponent implements OnInit  {
   }
   ngOnInit(): void {
     this.loadUsersList()
+
   }
   deleteUser(user : IUsersData) {
     this.service.deleteUser(user.id, this.url_user).subscribe( item => {
@@ -50,6 +52,7 @@ export class UsersPageComponent implements OnInit  {
   loadUsersList(){
     this.service.getAll(this.url).subscribe( item => {
       this.userslist = item;
+      this.loading = false
     })
   }
 }

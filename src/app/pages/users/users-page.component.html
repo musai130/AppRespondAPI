@@ -1,3 +1,5 @@
+<p *ngIf="loading" class="text-center text-lg">Loading...</p>
+
 <div class="flex justify-center items-center">
   <div *ngIf="flag" class="md:grid md:grid-cols-2" >
     <app-users (onChanged)="onChanged($event)" *ngFor="let item of userslist.data" [user]="item"></app-users>

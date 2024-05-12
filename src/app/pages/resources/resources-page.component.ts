@@ -3,14 +3,15 @@ import {UsersService} from "../../services/users.service";
 import {resources} from "../../data/resources";
 import {IResource} from "../../models/resources";
 import {ResourcesComponent} from "../../components/resources/resources.component";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-resources-page',
   templateUrl: './resources-page.component.html',
   imports: [
     ResourcesComponent,
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   standalone: true
 })
@@ -18,6 +19,7 @@ import {NgForOf} from "@angular/common";
 export class ResourcesPageComponent implements OnInit {
   constructor(private service: UsersService) {
   }
+  loading = false
   url = 'https://reqres.in/api/unknown'
   resourceslist: IResource = resources
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class ResourcesPageComponent implements OnInit {
   loadUsersList(){
     this.service.getAll(this.url).subscribe( item => {
       this.resourceslist = item;
+      this.loading = false
     })
   }
 }

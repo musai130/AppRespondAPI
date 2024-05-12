@@ -1,0 +1,13 @@
+<div class="flex justify-center items-center">
+  <div *ngIf="flag" class="md:grid md:grid-cols-2" >
+    <app-users (onChanged)="onChanged($event)" *ngFor="let item of userslist.data" [user]="item"></app-users>
+  </div>
+
+  <div *ngIf="!flag">
+    <app-edit-form (onChangedCancel)="onChangedCancel($event)" [user] = 'userform'></app-edit-form>
+  </div>
+</div>
+
+
+
+

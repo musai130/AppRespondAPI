@@ -1,0 +1,32 @@
+<div class="mb-4 m-2" >
+  <div class="flex items-center justify-center mb-1">
+    <img class="rounded-full mr-4 md:w-40 md:h-40 w-24 h-24  border-2 border-fuchsia-600" [src]="user.avatar" [alt]="user.first_name">
+    <div>
+      <div class="lg:flex mb-4 px-3 md:max-w-lg max-w-64  whitespace-nowrap justify-center items-end rounded-2xl border-2 border-fuchsia-600 ">
+        <p class="lg:font-mono lg:font-bold mr-5 lg:text-2xl text-lg">First Name</p>
+        <p class="truncate  font-mono lg:font-semibold lg:text-xl select-all">{{user.first_name}}</p>
+      </div>
+      <div class="lg:flex mb-4 px-3 md:max-w-lg max-w-64 whitespace-nowrap justify-center items-end rounded-2xl border-2 border-fuchsia-600 ">
+        <p class="lg:font-mono lg:font-bold mr-5 lg:text-2xl text-lg">Last Name</p>
+        <p class="truncate  font-mono lg:font-semibold lg:text-xl select-all">{{user.last_name}}</p>
+      </div>
+      <div class="lg:flex mb-4 px-3 md:max-w-lg max-w-64  whitespace-nowrap justify-center items-end rounded-2xl border-2 border-fuchsia-600 ">
+        <p class="lg:font-mono lg:font-bold mr-5 lg:text-2xl text-lg" >Contacts</p>
+        <p class="truncate font-mono lg:font-semibold lg:text-xl select-all">{{user.email}}</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="grid">
+      <input class="rounded-2xl p-1 focus:outline-0 caret-pink-500 mb-2 border-2 border-fuchsia-600 focus:border-2 focus:border-fuchsia-700 text-blue-gray-700" type="text" name="firs_name" #firs_name [ngModel]='user.first_name'/>
+      <input class="rounded-2xl p-1 focus:outline-0 caret-pink-500 mb-2 border-2 border-fuchsia-600 focus:border-2 focus:border-fuchsia-700 text-blue-gray-700" type="text" name="last_name" #last_name [ngModel]="user.last_name"/>
+      <input class="rounded-2xl p-1 focus:outline-0 caret-pink-500 mb-2 border-2 border-fuchsia-600 focus:border-2 focus:border-fuchsia-700 text-blue-gray-700" type="text" name="email" #email [ngModel]="user.email"/>
+    </div>
+    <div class="grid justify-items-stretch grid-cols-2">
+      <button class="justify-center rounded-2xl bg-fuchsia-600 p-1 mr-2 font-semibold text-amber-50 hover:bg-fuchsia-700" (click)=editUser() >save</button>
+      <button class="justify-center rounded-2xl bg-fuchsia-600 p-1 font-semibold text-amber-50 hover:bg-fuchsia-700" (click)="change(false)">cancel</button>
+    </div>
+  </div>
+</div>
+
+

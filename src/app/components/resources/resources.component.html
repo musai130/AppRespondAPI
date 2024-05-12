@@ -1,0 +1,16 @@
+<div class="flex border-2 rounded-2xl border-fuchsia-600 mb-2 p-3 mr-2">
+  <div class="flex items-center">
+    <div [style.background-color]="resources.color" class=" relative p-3 w-24 h-24 rounded-2xl mr-2">
+      <div [style.background-color]="resources.color" class="absolute -top-1.5 flex items-center justify-center -left-1.5 w-24 h-24 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] rounded-2xl">
+        <p class="text-amber-50"> {{resources.color}}</p>
+      </div>
+    </div>
+    <div>
+      <p class="font-mono text-2xl">{{ resources.name }}</p>
+      <p>{{resources.pantone_value}}</p>
+      <p>{{resources.year}}</p>
+    </div>
+  </div>
+
+</div>
+
